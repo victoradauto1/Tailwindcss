@@ -1,0 +1,34 @@
+TAILWIND
+
+Criando Componentes
+
+	1- Pegaremos as classes aplicadas dentro da tag html desejada;
+
+	2- Após isto, dentro do input.css que contm as diretivas (@tailwind base; @tailwind components; @tailwind utilities;) criaremos @layer components abaixo deles:
+
+	 @layer components { }
+
+	3- Dentro de @layer components {} colaremos as classes desejadas a partir de uma estrutura (usaremos de um botão , por exemplo):
+
+	.btn-blue{
+   		 @apply bg-blue-500  text-white font-bold py-2 px-4 rounded;
+    	}
+
+	 .btn-blue:hover{
+   		 @apply hover:bg-blue-700;
+    	}
+
+	OBS: SEMPRE iremos separar as classes de psedo classes, como fora feito acima. O hover por se tratar de uma pseudoclasse foi separado.
+
+	4- Depois que tudo isto tenha sido feito, temos que RE-buildAR nosso css, pois dentro dos estilos do tailwind no sistema ele ainda NÃO EXISTE:
+
+		a) iniciaremos um novo terminal;
+
+		b) aplicaremos o comando disponibilizado na página de documentação do tailwindcss, que já aplicamos para startá-lo, que é o:
+
+	npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+
+		c) após concluído o processo de rebuilding iremos aplicar o nome customizado, no exemplo acima btn-blue( dentro do html ficará,
+
+	<button class="btn-blue"> Clique </button>
+		

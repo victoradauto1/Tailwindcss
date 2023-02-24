@@ -1,0 +1,51 @@
+REGRAS GERAIS
+
+	- As regas dentro do "theme" sobreescreveram" todas as regras existentes no default do tailwind;
+
+	- No "theme" as propriedades são sobreescritas e no "extend" adicionadas. A primeira vista, podemos achar que é mais vantajoso o "extend", porém se formos
+
+	pensar em termos de performance e resposta de carregamento, iremos ver que trbalhar com um arquivo enxuto, por exemplo, usando apenas as cores da pelhata que
+
+	iremos usar, deixará o nosso carregamento muito mais leve e dinâmico.
+
+
+BREAK-POINTS
+
+	- Para alteramos os break-points do nosso projeto, iremos dentro do "theme" criar uma chave chamada "screens";
+
+	- O tailwind trabalha com a responsividade min-width, porém podemos inverter esta lógica e trablharmos com max-width. Para isto, iremos criar o objeto, por 
+
+	exemplo, com a chave "cel" e dentro do valor iremos adcionar outro objeto com a chave valor { "max" : '400px'};
+
+EXTEND:
+
+	- O mesmo proceder se aplica ao extend, no relativo a estrutura , só que será colocado dentro do espaço "extend";
+
+	- Caso queiramos acrescentar, por exemplo, uma cor nova, podemos atribuir o nome e o valor dentro da propriedade "colors", cuja a qual receberá um objeto com
+
+	o nome (chave) e o hexadecimal correspondente (valor);
+
+	- Caso queiramos ACRESCENTAR a uma ordem de cores pre-existente uma nova tonalidade, por exemplo, text-gray-1000 (por padrão só vem até 900):
+
+		extend: {
+      			colors:{
+        			gray:{
+          				1000: "#999"
+        				}
+      				}
+    			},
+
+	- criando novo espaçamento. Por padrão tudo que envolve medidas de numeros, só vai até 20 (no máx). Se quisermos criar um novo, procederemos igual ao que fize-
+
+	mos no tópico anterior, porém usaremos a cave "spacing"
+
+		spacing:{
+          			50: "15rem"
+
+      				}				<---- desta maneira estaremos criando uma nova estancia de espaçamento, se colocarmos m-50 , será atri-
+
+								buída uma margem com estas proporções, o mesmo se aplica a padding e etc.
+
+
+
+		
