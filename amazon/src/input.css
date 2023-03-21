@@ -18,3 +18,13 @@
 .item-nav-inf:hover{
     @apply hover:text-orange-650 hover:border-orange-650
 }
+
+.item-footer-inf{
+    @apply hidden  mb-10 text-gray-600
+    }
+
+@screen md{
+    .item-footer-inf{
+        @apply block
+    }
+}
