@@ -9,5 +9,5 @@ module.exports = {
       colors: colors.amber,
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }
